@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox creationComplete="init();" xmlns:mx="http://www.adobe.com/2006/mxml" width="300" height="100%" horizontalAlign="center" verticalAlign="top" verticalGap="8">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.core.UIComponent;
+			import mx.controls.Label;
+			import mx.core.Application;
+			import org.igorcosta.ui.Page;
+			import flash.display.DisplayObject;
+            import flash.geom.Rectangle;
+            import mx.controls.Alert;
+            
+			[Bindable] private var box:Page;
+			
+			private var lastNumber:Number=1;
+			private function init():void {
+				Application.application.addEventListener("PDFComplete",createPages);
+			}
+			private function createPages(event:Event):void {
+				var mc:MovieClip = Application.application.libMC;
+				for (var i:int=1;i<=mc.totalFrames;i++){
+						box = new Page();
+						box.pageNumber = i;
+						addChild(box);
+						box.addEventListener(MouseEvent.CLICK,dispatchPage);						
+					}
+			}
+			private function dispatchPage(e:MouseEvent):void {	
+			//此处用到小技巧，解决最后两页切换的无法转换的问题
+			Application.application.libMC.gotoAndStop(e.currentTarget.pageNumber-2);
+			Application.application.libMC.gotoAndStop(e.currentTarget.pageNumber);
+			Application.application.controls.snapText=null;
+			Application.application.controls.doSearch();
+			//记录该次的点击页
+			lastNumber=e.currentTarget.pageNumber;
+			}
+  
+		]]>
+	</mx:Script>
+</mx:VBox>

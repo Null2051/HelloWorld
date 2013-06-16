@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application creationComplete="init()" layout="vertical" verticalGap="0" horizontalGap="0" left="0" right="0" paddingTop="0" paddingLeft="0" paddingRight="0" paddingBottom="0"
+				backgroundGradientColors="[0x999999,0x111111]" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			import mx.events.IndexChangedEvent;
+			import mx.controls.Alert;
+			private var mc:MovieClip=null;
+
+
+			private var path:String;
+			//放大倍数
+			private var zoom:Number=1;
+			//第几部份
+			private var part:int=0;
+			//当前页
+			private var page:int=0;
+			//每页大小
+			private var pageSize:int=0;
+			//所有页面数量
+			private var totalPage:int=0;
+			private var dig:Dialog;
+
+			public function init():void
+			{
+				dig=new Dialog(this, true);
+				//if (this.parameters.hasOwnProperty("swf"))
+				if (!this.parameters.hasOwnProperty("swf"))
+				{
+					//path=this.parameters.swf;
+					path="pdf/source_25_5";
+					this.LoadSwf(part);
+				}
+				else
+				{
+					//Alert.show("swf参数不正确");
+					dig.open("swf参数不正确", "swf参数不正确", true);
+				}
+			}
+
+
+			public function LoadSwf(part:int, goPage:int=1):void
+			{
+				dig.open("当前操作", "正在加载文件，请稍等");
+				pageSize=int(path.substring(path.lastIndexOf("_") + 1, path.length));
+				totalPage=int(path.substring(path.indexOf("_") + 1, path.lastIndexOf("_")));
+				var folder:String=path.substring(path.indexOf("/") + 1, path.length);
+				//var fileName:String=path.substring(path.indexOf("/") + 1, path.indexOf("_"));
+
+				page=goPage;
+				loader.source=path + "/" + part + ".swf";
+
+				loader.addEventListener(Event.COMPLETE, function(e:Event):void
+					{
+						mc=(e.target as SWFLoader).content as MovieClip;
+						this.total=mc.totalFrames;
+
+						mc.gotoAndStop(goPage);
+
+						//page=1;
+
+						changeState();
+						zoom=Number(loader.width) / mc.width;
+						loader.height=mc.height * zoom;
+						dig.close();
+						loader.addEventListener(MouseEvent.MOUSE_DOWN, beginDrag);
+					});
+				loader.addEventListener(IOErrorEvent.IO_ERROR, function():void
+					{
+						dig.close();
+						dig.open("当前操作", "你查看的文件不存在");
+					//Alert.show("你查看的文件不存在");
+					});
+				loader.load();
+				this.lbTotal1.text=this.lbTotal2.text=totalPage + "页";
+
+			}
+
+
+
+			private function btnFull_click(e:Event):void
+			{
+				stage.displayState=(stage.displayState == StageDisplayState.NORMAL ? StageDisplayState.FULL_SCREEN : StageDisplayState.NORMAL);
+				if (this.stage.displayState == StageDisplayState.FULL_SCREEN)
+				{
+					this.btnFull1.label="返回";
+				}
+				else
+				{
+					this.btnFull1.label="全屏";
+				}
+				this.main.height=this.height - 50;
+				title1.width=title2.width=main.width=width;
+				btnFull2.x=btnFull1.x=this.width - 50;
+			}
+
+			private function btnNext_click(e:Event):void
+			{
+				if (page == mc.totalFrames)
+				{
+					part++;
+					//page=0;
+					LoadSwf(part);
+					changeState();
+				}
+				else
+				{
+					page++;
+					mc.gotoAndStop(page);
+					changeState();
+				}
+				trace(this.box.verticalScrollPosition);
+
+			}
+
+			private function btnPre_click(e:Event):void
+			{
+
+				page--;
+				if (page == 0 && part != 0)
+				{
+					part--;
+					LoadSwf(part, pageSize);
+				}
+				else
+				{
+					//trace(page);
+					mc.gotoAndStop(page);
+				}
+				changeState();
+
+			}
+
+
+
+			private function changeState():void
+			{
+				this.txtCurrent2.text=this.txtCurrent1.text=String(part * pageSize + page);
+				//this.lbTotal2.text=this.lbTotal1.text=String(total);
+				if (part == 0 && page == 1)
+				{
+					this.btnPre2.enabled=this.btnPre1.enabled=false;
+				}
+				else if ((part + 1) * page == this.totalPage)
+				{
+					this.btnNext2.enabled=this.btnNext1.enabled=false;
+				}
+				else
+				{
+					this.btnPre2.enabled=this.btnPre1.enabled=true;
+					this.btnNext2.enabled=this.btnNext1.enabled=true;
+				}
+				this.main.height=this.height - 50;
+				title1.width=title2.width=main.width=width;
+				btnFull2.x=btnFull1.x=this.width - 50;
+				if (mc != null)
+				{
+					//Alert.show("mc.width"+mc.width);
+					//mc.x=(this.width-mc.width*zoom)/2;
+				}
+				if (part == totalPage / pageSize)
+				{
+					totalPage=(part - 1) * pageSize + mc.totalFrames;
+				}
+				this.lbTotal1.text=this.totalPage.toString();
+				this.main.verticalScrollPosition=0;
+			}
+
+			private function btnZooomIn_click(e:Event):void
+			{
+				mc.height*=1.1;
+				mc.width*=1.1;
+
+			}
+
+			private function txtCurrent_change(e:KeyboardEvent):void
+			{
+				if (e.keyCode == 13)
+				{
+					var input:int=int(txtCurrent1.text);
+					if (input > totalPage || input < 0)
+					{
+						dig.open("系统提示", "页码不合法", false);
+						return;
+					}
+
+					part=(input / pageSize);
+					page=(input) % pageSize;
+					if (page == 0)
+					{
+						part=part - 1;
+						page=pageSize;
+					}
+					this.LoadSwf(part, page);
+					changeState();
+				}
+
+			}
+
+			private function btnZooomOut_click(e:Event):void
+			{
+				mc.height*=0.9;
+				mc.width*=0.9;
+			}
+			
+			//拖动
+		
+
+			public function beginDrag(e:MouseEvent):void
+			{
+				loader.startDrag();
+				e.target.filters=[new DropShadowFilter(10, 45, 0x88888888)];
+				e.updateAfterEvent();
+				loader.addEventListener(MouseEvent.MOUSE_UP, endDrag);
+				loader.removeEventListener(MouseEvent.MOUSE_DOWN, beginDrag);
+			}
+
+			public function endDrag(e:Event):void
+			{
+				loader.stopDrag();
+				e.target.filters=[];
+				loader.addEventListener(MouseEvent.MOUSE_DOWN, beginDrag);
+				loader.removeEventListener(MouseEvent.MOUSE_UP, endDrag);
+			
+			}
+		]]>
+	</mx:Script>
+	<mx:Canvas id="title1" width="1007" height="25" alpha="0.8" backgroundColor="#80C6F2" fontSize="9">
+		<mx:Button x="131" y="1" label="&lt;" id="btnPre1" click="btnPre_click(event)"/>
+		<mx:Button x="3" y="1" label="&lt;&lt;" id="btnClose1"/>
+		<mx:Button x="326" y="1" label="+" click="btnZooomIn_click(event)"/>
+		<mx:Button x="380" y="1" label="-" click="btnZooomOut_click(event)"/>
+		<mx:Button x="900" id="btnFull1" y="1" click="btnFull_click(event)" label="全屏"/>
+		<mx:Button x="259" y="1" label="&gt;" id="btnNext1" click="btnNext_click(event)"/>
+		<mx:Text x="226" y="4" text="1" id="lbTotal1"/>
+		<mx:TextInput x="179" y="1" keyUp="txtCurrent_change(event)" width="46" id="txtCurrent1"/>
+	</mx:Canvas>
+	<mx:Canvas y="0" id="main" width="1007" verticalScrollPolicy="on" backgroundColor="#666666">
+		<mx:VBox id="left" width="0" height="100%" horizontalGap="0" backgroundColor="#ffffff"/>
+		<mx:VBox id="box" styleName="boxtop" width="{main.width-16}" verticalScrollPolicy="off" horizontalCenter="true" verticalGap="0">
+			<mx:SWFLoader useHandCursor="true" buttonMode="true" bottom="2" id="loader" width="{main.width-20}" showBusyCursor="false" height="100%"/>
+		</mx:VBox>
+	</mx:Canvas>
+	<mx:Canvas id="title2" width="1007" height="25" alpha="0.8" backgroundColor="#80C6F2" fontSize="9">
+		<mx:Button x="131" y="1" label="&lt;" id="btnPre2" click="btnPre_click(event)"/>
+		<mx:Button x="3" y="1" label="&lt;&lt;" id="btnClose2"/>
+		<mx:Button x="326" y="1" label="+" click="btnZooomIn_click(event)"/>
+		<mx:Button x="380" y="1" label="-" click="btnZooomOut_click(event)"/>
+		<mx:Button x="900" id="btnFull2" y="1" click="btnFull_click(event)" label="全屏"/>
+		<mx:Button x="259" y="1" label="&gt;" id="btnNext2" click="btnNext_click(event)"/>
+		<mx:Text x="226" y="4" text="1" id="lbTotal2"/>
+		<mx:TextInput x="179" keyUp="txtCurrent_change(event)" y="1" width="46" id="txtCurrent2"/>
+	</mx:Canvas>
+	<mx:Style source="global.css"/>
+</mx:Application>

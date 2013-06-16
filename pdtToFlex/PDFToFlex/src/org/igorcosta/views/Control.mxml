@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:ApplicationControlBar creationComplete="ColorShortcuts.init();" width="100%" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			import caurina.transitions.properties.ColorShortcuts;
+			import caurina.transitions.*;
+			import flash.text.TextSnapshot;
+			import mx.controls.Alert;
+			
+			
+			[Bindable]private var _pages:Number;
+			[Bindable]private var _currentPage:Number;
+			private var _target:*;
+			
+			public function set target(value:*):void {
+				_target = value;
+			}
+			public function get target():*{
+				return _target;
+			}
+			
+			public function set Pages(value:Number):void {
+				_pages = value;
+			}
+			public function get Pages():Number{
+				return _pages;
+			}
+			public function set currentPage(value:Number):void {
+				_currentPage = value;
+			}
+			public function get currentPage():Number{
+				return _currentPage;
+			}
+			public function zoomIN():void {
+					Tweener.addTween(_target, {scaleX: _target.scaleX * 1.2, scaleY: _target.scaleY * 1.2, time: .60, transition: 'easeOut'});
+			}
+			public function zoomOUT():void {
+					Tweener.addTween(_target, {scaleX: _target.scaleX * .6, scaleY: _target.scaleY * .6, time: .70, transition: 'easeOut'});
+			}
+			public function nextPage():void {
+
+					Tweener.addTween(_target,{alpha:0.8,color:0xffffff,time:0.5,transition:"easeOutExpo"});
+					Tweener.addTween(_target,{delay:0.5,color:0xffffff,alpha:1,time:0.5,transition:"easeOutExpo"});
+						
+					btnPrevious.visible=true;
+					if(_currentPage==_pages-1)
+					{
+					 btnNext.visible=false;
+					}
+					if(_currentPage!=_pages)
+					{		
+					_target.nextFrame();
+					_currentPage = _target.currentFrame;
+					this.snapText=null;
+					doSearch();							
+							
+					}
+
+			}
+			public function previousPage():void {
+				
+					btnNext.visible=true;
+					if(_currentPage==1)
+					{
+					btnPrevious.visible=false;
+					}
+	
+					Tweener.addTween(_target,{alpha:0.8,color:0xffffff,time:0.5,transition:"easeOutExpo"});
+					Tweener.addTween(_target,{delay:0.5,color:0xffffff,alpha:1,time:0.5,transition:"easeOutExpo"});
+					_target.prevFrame();
+					_currentPage = _target.currentFrame;
+					this.snapText=null;
+					doSearch();
+				
+					
+			}			
+			public var snapText:TextSnapshot;
+			private var searchText:String;
+
+			public function doSearch(change:Boolean=true):void {
+				
+			 var	activeDoc:MovieClip=this._target;
+				if (snapText == null&&change)
+					snapText = activeDoc.textSnapshot;
+
+				if (searchTI.text != '' && searchTI.text.length > 1) {
+					var textPos:int = snapText.findText(0, searchTI.text, false);
+					snapText.setSelected( 0, snapText.charCount, false );  
+ 					if (textPos > 0) {
+						do {
+							snapText.setSelectColor(0xffff00);
+							snapText.setSelected( textPos, textPos + searchTI.text.length, true );
+							textPos = snapText.findText(textPos + searchTI.text.length, searchTI.text, false);
+						}
+						while (textPos > 0)
+					}
+					else {
+						Alert.show( "没有找到相关关键字.", "检索关键字");        		
+					}
+	
+				}
+				else {
+					snapText.setSelected( 0, snapText.charCount, false );	            	
+				}
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Button label="Zoom In (+)" click="zoomIN()"/>
+	<mx:Button label="Zoom Out (-)" click="zoomOUT()"/>
+	<mx:Button id="btnSearch" label="查找" click="doSearch()"/>
+	<mx:TextInput id="searchTI" width="103"/>
+	<mx:LinkButton id="btnPrevious" visible="false" label="Previous Page" click="previousPage()"/>
+	<mx:LinkButton label="{_currentPage + '/'+_pages + 'Pages'}"/>
+	<mx:LinkButton id="btnNext"  label="Next Page" click="nextPage()"/>
+	
+</mx:ApplicationControlBar>

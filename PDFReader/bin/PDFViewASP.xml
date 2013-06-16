@@ -1,0 +1,451 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PDFViewASP
+</name>
+</assembly>
+<members>
+<member name="F:PDFViewASP.WebUserControl1.MainPanel">
+	<summary>
+MainPanel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ToolStripPanel">
+	<summary>
+ToolStripPanel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ToolStripTable">
+	<summary>
+ToolStripTable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableRow1">
+	<summary>
+TableRow1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell1">
+	<summary>
+TableCell1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.PageLabel">
+	<summary>
+PageLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell2">
+	<summary>
+TableCell2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.PreviousPageButton">
+	<summary>
+PreviousPageButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell3">
+	<summary>
+TableCell3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.NextPageButton">
+	<summary>
+NextPageButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell4">
+	<summary>
+TableCell4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.GoToLabel">
+	<summary>
+GoToLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell5">
+	<summary>
+TableCell5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.PageNumberTextBox">
+	<summary>
+PageNumberTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell6">
+	<summary>
+TableCell6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ZoomOutButton">
+	<summary>
+ZoomOutButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell7">
+	<summary>
+TableCell7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ZoomInButton">
+	<summary>
+ZoomInButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell8">
+	<summary>
+TableCell8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.RotateCCButton">
+	<summary>
+RotateCCButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell9">
+	<summary>
+TableCell9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.RotateCButton">
+	<summary>
+RotateCButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell10">
+	<summary>
+TableCell10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.FitToScreenButton">
+	<summary>
+FitToScreenButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell11">
+	<summary>
+TableCell11 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.FitToWidthButton">
+	<summary>
+FitToWidthButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell12">
+	<summary>
+TableCell12 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ActualSizeButton">
+	<summary>
+ActualSizeButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell13">
+	<summary>
+TableCell13 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.SearchButton">
+	<summary>
+SearchButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell14">
+	<summary>
+TableCell14 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.SearchTextBox">
+	<summary>
+SearchTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell15">
+	<summary>
+TableCell15 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.SearchPreviousButton">
+	<summary>
+SearchPreviousButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.TableCell16">
+	<summary>
+TableCell16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.SearchNextButton">
+	<summary>
+SearchNextButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.PicPanel">
+	<summary>
+PicPanel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.Table1">
+	<summary>
+Table1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.BookmarkCell">
+	<summary>
+BookmarkCell control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.BookmarkPanel">
+	<summary>
+BookmarkPanel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.BookmarkTable">
+	<summary>
+BookmarkTable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.BookmarkRow">
+	<summary>
+BookmarkRow control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.BookmarkContentCell">
+	<summary>
+BookmarkContentCell control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.PicCell">
+	<summary>
+PicCell control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.ImagePanel">
+	<summary>
+ImagePanel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.CurrentPageImage">
+	<summary>
+CurrentPageImage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.HiddenPageNumber">
+	<summary>
+HiddenPageNumber control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.HiddenBrowserWidth">
+	<summary>
+HiddenBrowserWidth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.HiddenBrowserHeight">
+	<summary>
+HiddenBrowserHeight control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP.WebUserControl1.HiddenPageNav">
+	<summary>
+HiddenPageNav control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:PDFViewASP._Default.form1">
+	<summary>
+form1 控件。
+</summary>
+	<remarks>
+自动生成的字段。
+若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+</remarks>
+</member><member name="F:PDFViewASP._Default.FileUpload1">
+	<summary>
+FileUpload1 控件。
+</summary>
+	<remarks>
+自动生成的字段。
+若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+</remarks>
+</member><member name="F:PDFViewASP._Default.Button1">
+	<summary>
+Button1 控件。
+</summary>
+	<remarks>
+自动生成的字段。
+若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+</remarks>
+</member><member name="F:PDFViewASP._Default.ErrorLabel">
+	<summary>
+ErrorLabel 控件。
+</summary>
+	<remarks>
+自动生成的字段。
+若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+</remarks>
+</member><member name="F:PDFViewASP._Default.PDFViewer1">
+	<summary>
+PDFViewer1 控件。
+</summary>
+	<remarks>
+自动生成的字段。
+若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+</remarks>
+</member>
+</members>
+</doc>

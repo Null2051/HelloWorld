@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application creationComplete="init()" xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" xmlns:views="org.igorcosta.views.*">
+
+<mx:Metadata>
+		[Event(name="PDFComplete",type="flash.events.Event")]
+</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+		import mx.controls.Alert;
+			   private var swfURL:String = "test/test66.swf";
+			   public var libMC:MovieClip = new MovieClip();
+			   private var loader:Loader = new Loader();
+			   private function init():void{
+			    
+			    loader.contentLoaderInfo.addEventListener(Event.COMPLETE, swfComplete);
+			    var fLoader:ForcibleLoader = new ForcibleLoader(loader);
+			    fLoader.load(new URLRequest(swfURL));
+			    swfContainer.addChild(loader);
+			  }
+			  private var i:int=1;
+			  private var contentEvent:Event;
+			  private function swfComplete(event:Event):void{
+			   libMC = event.currentTarget.content as MovieClip;
+			   contentEvent=event;
+			 //  activeDoc=contentEvent.currentTarget.content as MovieClip;
+			   libMC.gotoAndStop(1);
+
+			  dispatchEvent(new Event("PDFComplete"));
+			  controls.target = libMC;
+			  controls.currentPage = libMC.currentFrame;
+			  controls.Pages = libMC.totalFrames;
+			  }
+
+         private function getNextPage():void
+         {
+         	libMC.nextFrame();
+         }
+			
+			private function clone(obj:Object):* {
+            var copier:ByteArray = new ByteArray();
+            copier.writeObject(obj);
+            copier.position = 0;
+            return copier.readObject();
+}
+		]]>
+	</mx:Script>	
+	<views:Control id="controls" width="100%" height="38"/>
+	<mx:HDividedBox top="40" width="100%" height="100%">
+			<views:Pages id="indexPage" width="200" height="100%">
+			</views:Pages>
+			<mx:Canvas backgroundColor="#222222" width="100%" height="100%">
+				<mx:UIComponent id="swfContainer" width="850" height="1100"/>
+			</mx:Canvas>			
+			</mx:HDividedBox>
+
+</mx:Application>

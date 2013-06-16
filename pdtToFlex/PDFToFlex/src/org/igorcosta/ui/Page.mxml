@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="120" height="120" horizontalAlign="center" verticalAlign="middle" borderStyle="solid" borderColor="#D9DADB" backgroundColor="#F2F0F0">
+	<mx:Script>
+		<![CDATA[
+		[Bindable]private var _pageNumber:Number;
+		[Bindable]private var _status:Boolean =false;
+		
+		public function set pageNumber(value:Number):void {
+			_pageNumber = value;
+		}
+		public function get pageNumber():Number{
+			return _pageNumber;
+		}
+		public function set status(value:Boolean):void {
+					_status = value;
+		}
+		public function get status():Boolean{
+			return _status;
+		}
+		]]>
+	</mx:Script>
+	<mx:Label text="{_pageNumber}" fontFamily="Verdana" fontSize="36" fontWeight="normal"/>
+</mx:VBox>

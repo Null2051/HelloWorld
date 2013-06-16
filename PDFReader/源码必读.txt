@@ -1,0 +1,6 @@
+PDF阅读器源码
+
+ASP.Net PDF 查看控件，不需要装pdf，完整asp.net例子 
+上传pdf文件，进行阅读，可以放大、缩小、旋转、拉伸、搜索等操作.
+
+作者：saicyouki  

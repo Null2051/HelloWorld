@@ -1,0 +1,30 @@
+global{  
+	fontSize:12;
+	textDecoration: none;
+	marginLeft: 0px;
+	marginRight: 0px;
+	marginTop: 0px;
+	marginBottom: 0px;
+} 
+Application {  
+	marginLeft: 0;
+	marginRight: 0;
+	marginTop: 0;
+	marginBottom: 0;
+	horizontalAlign: 'center';
+	fontSize: 12;
+	fontWeight: normal;
+} 
+
+
+TitleWindow {
+/**/
+	dropShadowEnabled: false; 
+	borderAlpha: 0.6;
+	transform:0.1; 
+	borderColor: haloSilver; 
+	backgroundColor: haloSilver;
+	modalTransparencyBlur: 0; 
+	cornerRadius: 3; 
+	borderStyle: none;
+}
