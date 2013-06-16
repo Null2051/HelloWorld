@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>鐧惧害甯愬彿鐧诲綍</title>
+<link type="text/css" rel="stylesheet" href="/style/v3/reset.css?cdnversion=20130218" />
+<link type="text/css" rel="stylesheet" href="/style/v3/global.css?cdnversion=20130218" />
+<link type="text/css" rel="stylesheet" href="/style/v3/v3_page_login.css?cdnversion=20130218" />
+<script type="text/javascript" src="/js/tangram-2.0.js?cdnversion=20130218"></script>
+<script type="text/javascript" src="https://passport.baidu.com/passApi/js/wrapper.js?cdnversion=20130218"></script>
+</head>
+<body>
+<div id="wrapper" class="grid-95">
+    <div id="header">
+        <a href="http://www.baidu.com" class="logo"><img alt="baidu" src="/img/logo.gif"></a>
+    </div>
+    
+    <div id="content" class="clearfix">
+        <div class="passPro grid-69 left">
+            <div><img src="/img/v2/bigeye.png" alt=""/></div>
+            <ul>
+                <li class="m-list clearfix zhidao">
+                    <span><img src="/img/v2/icon1.png" alt=""/></span>
+                    <h4>鐭ラ亾</h4>
+                    <p>鐧惧害鐭ラ亾鏄鐢卞叏鐞冩渶澶х殑涓鏂囨悳绱㈠紩鎿庣櫨搴﹁嚜涓荤爺鍙戙佸熀浜庢悳绱㈢殑浜掑姩寮忕煡璇嗛棶绛斿垎浜骞冲彴銆</p>
+                </li>
+                <li class="m-list clearfix space">
+                    <span><img src="/img/v2/icon2.png" alt=""/></span>
+                    <h4>绌洪棿</h4>
+                    <p>鐧惧害绌洪棿鏄涓涓杞绘澗璁板綍銆佸垎浜鐢熸椿鐨勫唴瀹圭ぞ鍖猴紝鍦ㄨ繖閲屼綘鍙浠ユ壘鍒版洿澶氬織鍚岄亾鍚堢殑浜猴紝闅忔椂闅忓湴涓庡ソ鍙嬩繚鎸佹矡閫氥佷竴璧锋壘瀵诲揩涔愩傜櫨搴︾┖闂达紝璁╀笘鐣屽彂鐜颁綘鐨勫瓨鍦锛屽叡浜浣犵殑绮惧僵锛</p>
+                </li>
+                <li class="m-list clearfix wenku">
+                    <span><img src="/img/v2/icon3.png" alt=""/></span>
+                    <h4>鏂囧簱</h4>
+                    <p>鍦ㄧ嚎浜掑姩寮忔枃妗ｅ垎浜骞冲彴锛屽湪杩欓噷锛屾偍鍙浠ュ拰鍗冧竾缃戝弸鍒嗕韩鑷宸辨墜涓鐨勬枃妗ｏ紝鍏ㄦ枃闃呰诲叾浠栫敤鎴风殑鏂囨。锛屽悓鏃讹紝涔熷彲浠ュ埄鐢ㄥ垎浜鏂囨。鑾峰彇鐨勭Н鍒嗕笅杞芥枃妗ｃ</p>
+                </li>
+            </ul>
+        </div>
+        <div class="grid-25 right">
+        <div class="passAcc"> 
+            <div class="passAccInfo">
+                <p class="accTab" id="acc_tab">
+                    <span id="tab_nor" class="tab nor current"><a>鏅閫氱櫥褰</a></span>
+                    <span id="tab_mob" class="tab mob"><a>鎵嬫満鐧诲綍</a></span>
+                </p>
+                <div class="passAccForm">
+					<div id="loginForm">
+					</div>
+                </div>
+                <div class="passAccReg">
+                    <span>杩樻病鏈夌櫨搴﹀笎鍙凤紵<a class="reg_link" href="https://passport.baidu.com/v2/?reg&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" target="_blank">绔嬪嵆娉ㄥ唽</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <h4>甯歌侀棶棰</h4>
+            <ul>
+                <li><a href="http://help.baidu.com/question?prod_en=passport&class=%C8%AB%B2%BF%CE%CA%CC%E2&id=2574 " target="_blank">濡備綍璁剧疆鏇村畨鍏ㄧ殑瀵嗙爜锛</a></li>
+                <li><a href="http://help.baidu.com/question?prod_en=passport&class=%C8%AB%B2%BF%CE%CA%CC%E2&id=2562" target="_blank">鐧诲綍鏃舵樉绀虹郴缁熼敊璇鎬庝箞鍔烇紵</a></li>
+                <li><a href="http://help.baidu.com/question?prod_en=passport&class=%C8%AB%B2%BF%CE%CA%CC%E2&id=2560" target="_blank">浠涔堟槸鐢ㄦ埛鍚嶏紵</a></li>
+                <li><a href="http://help.baidu.com/question?prod_en=passport&class=%C8%AB%B2%BF%CE%CA%CC%E2&id=2564" target="_blank">鏄剧ず瀵嗙爜閿欒鎬庝箞鍔烇紵</a></li>
+                <li><a href="http://help.baidu.com/question?prod_en=passport&class=%CA%B9%D3%C3%CE%CA%CC%E2&id=2575" target="_blank">濡備綍淇鏀规垜鐨勮祫鏂欙紵</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    
+    <div id="footer">&copy;2013 Baidu</div>
+</div>
+<script type="text/javascript">
+	var _config = {
+		u:'http://www.baidu.com/'
+		,noreal_u:''
+		,staticpage: 'https://passport.baidu.com/v3Jump.html'
+	}
+	var login_rem_name = '';
+	if(document.charset && (document.charset.toLowerCase().indexOf('utf') == -1) && (navigator.userAgent.indexOf("MSIE") > 0)) {
+		location.href = location.href + (location.href.indexOf('?')>-1? "&nocache=1": "?nocache=1");
+	}
+</script>
+<script type="text/javascript" src="/js/magic-suggestion.js?cdnversion=20130218"></script>
+<script type="text/javascript" src="/js/v3LoginPage.js?cdnversion=20130218"></script>
+</body>
+</html>
